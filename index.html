@@ -32,30 +32,49 @@
         .container-fluid{
             margin-top: 10px;
         }
+        .test{
+            padding: 5px;
+        }
+        
     </style>
 </head>
 <body>
     <div class="container-fluid row">
         <h1 style="text-align: center;">Tugas 1 Grafika Komputer</h1>
-        <div class="dropdown mb-3" style="display:flex; justify-content: center;">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- <div class="dropdown mb-3" style="display:flex; justify-content: center;">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" onchange="init()" data-bs-toggle="dropdown" aria-expanded="false">
               Transformasi
             </a>
           
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" onclick="img()" value="tidakada">Tidak ada</a></li>
-              <li><a class="dropdown-item" onclick="img1()" value="nomor1">Nomor 1</a></li>
-              <li><a class="dropdown-item" onclick="img2()" value="nomor2">Nomor 2</a></li>
-              <li><a class="dropdown-item" onclick="img3()" value="nomor3">Nomor 3</a></li>
-              <li><a class="dropdown-item" onclick="img4()" value="nomor4">Nomor 4</a></li>
-              <li><a class="dropdown-item" onclick="img5()" value="nomor5">Nomor 5</a></li>
-              <li><a class="dropdown-item" onclick="img6()" value="nomor6">Nomor 6</a></li>
-              <li><a class="dropdown-item" onclick="img7()" value="nomor7">Nomor 7</a></li>
-              <li><a class="dropdown-item" onclick="img8()" value="nomor8">Nomor 8</a></li>
-              <li><a class="dropdown-item" onclick="img9()" value="nomor9">Nomor 9</a></li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+              <li><a class="dropdown-item" value="tidakada">Tidak ada</a></li>
+              <li><a class="dropdown-item" value="nomor1">Nomor 1</a></li>
+              <li><a class="dropdown-item" value="nomor2">Nomor 2</a></li>
+              <li><a class="dropdown-item" value="nomor3">Nomor 3</a></li>
+              <li><a class="dropdown-item" value="nomor4">Nomor 4</a></li>
+              <li><a class="dropdown-item" value="nomor5">Nomor 5</a></li>
+              <li><a class="dropdown-item" value="nomor6">Nomor 6</a></li>
+              <li><a class="dropdown-item" value="nomor7">Nomor 7</a></li>
+              <li><a class="dropdown-item" value="nomor8">Nomor 8</a></li>
+              <li><a class="dropdown-item" value="nomor9">Nomor 9</a></li>
 
             </ul>
-          </div>
+        </div> -->
+        <div class="test mb-3" style="display:flex; justify-content: center;" >
+            <select id="transform"  value="tidakada">
+                <option class="dropdown-item" value="tidakada" onClick="window.location.reload();">Tidak ada</option>
+                <option class="dropdown-item" value="nomor1" onClick="window.location.reload();">Nomor 1</option>
+                <option class="dropdown-item" value="nomor2" onClick="window.location.reload();">Nomor 2</option>
+                <option class="dropdown-item" value="nomor3" onClick="window.location.reload();">Nomor 3</option>
+                <option class="dropdown-item" value="nomor4" onClick="window.location.reload();">Nomor 4</option>
+                <option class="dropdown-item" value="nomor5" onClick="window.location.reload();">Nomor 5</option>
+                <option class="dropdown-item" value="nomor6" onClick="window.location.reload();">Nomor 6</option>
+                <option class="dropdown-item" value="nomor7" onClick="window.location.reload();">Nomor 7</option>
+                <option class="dropdown-item" value="nomor8" onClick="window.location.reload();">Nomor 8</option>
+                <option class="dropdown-item" value="nomor9" onClick="window.location.reload();">Nomor 9</option>
+            </select>
+        </div>
+
     </div>
     <img hidden id="scream" src="OIP.jpg" alt="The Scream" width="220" height="277">
 
@@ -151,10 +170,66 @@
         function init(){
             canvas = document.getElementById('mycanvas');
             ctx = canvas.getContext('2d');
-            img0();
-        }
+            
+            var x = document.getElementById("transform").value;
+            var img = document.getElementById('scream');
 
+            if(x == 'tidakada'){
+                document.getElementById("transform").onchange = img0();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor1'){
+                document.getElementById("transform").onchange = img1();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor2'){
+                document.getElementById("transform").onchange = img2();
+                document.getElementById("transform").value = x;
+            }
+            else if(x === 'nomor3'){
+                document.getElementById("transform").onchange = img3();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor4'){
+                document.getElementById("transform").onchange = img4();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor5'){
+                document.getElementById("transform").onchange = img5();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor6'){
+                document.getElementById("transform").onchange = img6();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor7'){
+                document.getElementById("transform").onchange = img7();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor8'){
+                document.getElementById("transform").onchange = img8();
+                document.getElementById("transform").value = x;
+
+            }
+            else if(x === 'nomor9'){
+                document.getElementById("transform").onchange = img9();
+                document.getElementById("transform").value = x;
+
+            }
+        
+            
+            
+        }
         window.onload = init;
+
+
     </script>
 </body>
 </html>
